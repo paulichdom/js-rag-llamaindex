@@ -2,6 +2,7 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "npm:lla": "npm:lla@1.0.0",
       "npm:llamaindex@0.1.8": "npm:llamaindex@0.1.8_openai@4.32.1"
     },
     "npm": {
@@ -669,6 +670,10 @@
         "dependencies": {
           "immediate": "immediate@3.0.6"
         }
+      },
+      "lla@1.0.0": {
+        "integrity": "sha512-6Vld2xI8meZFlYgSPt/gFx4Uv0I+92Kq2UF4aAfo4AqB76m1ELN7wl7AZa5dGeT+xwW1mBSMxj//8fsB/AdDhQ==",
+        "dependencies": {}
       },
       "llamaindex@0.1.8_openai@4.32.1": {
         "integrity": "sha512-uNL1e88C+SPLcgWPgdm8PusAaZr/E2vEgz/Rr73AFHu+two5vkE5R9/EteH/626/p5SkV7IWOgXHFaYqWZQuSw==",
