@@ -1,4 +1,4 @@
-"use client";
+'use client';
 // import-me: 7
 import React, { useState } from 'react';
 const QuerySender: React.FC = () => {
@@ -6,9 +6,9 @@ const QuerySender: React.FC = () => {
   const [answer, setAnswer] = useState<string>('');
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setAnswer("Thinking...")
-    const response = await fetch('http://localhost:8000', {
+    e.preventDefault();
+    setAnswer('Thinking...');
+    const response = await fetch('http://localhost:8002', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,12 +18,12 @@ const QuerySender: React.FC = () => {
     const data = await response.json();
     console.log('Response from the server:', data);
     setAnswer(data.response);
-  }
+  };
 
   // Function to update the state with the input value
   const handleChange = (e) => {
     setQuery(e.target.value);
-  };  
+  };
 
   return (
     <div>
