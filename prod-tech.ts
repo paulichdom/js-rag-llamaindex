@@ -37,3 +37,29 @@ let response2 = await engine2.query({
   query: 'How does useReducer hook works?',
 });
 console.log(response2.toString());
+
+const retriever = index2.asRetriever();
+retriever.similarityTopK = 3;
+
+let chatEngine = new ContextChatEngine({
+    retriever,
+});
+
+let messageHistory = [
+  {
+      role: "user",
+      content: "What is JSX?"
+  },
+  {
+      role: "assistant",
+      content: "JSX stands for JavaScript Syntax Extension. It is an extension to the JavaScript language syntax that provides a way to structure component rendering using syntax familiar to many developers. JSX is similar in appearance to HTML and is typically used to write React components, although components can also be written in pure JavaScript. It was created by Facebook and is similar to another extension syntax created for PHP called XHP."
+  }
+]
+
+let newMessage = "What was that last thing you mentioned?"
+
+const response3 = await chatEngine.chat({
+  message: newMessage,
+  chatHistory: messageHistory
+});
+console.log(response3.toString())
