@@ -23,3 +23,17 @@ let index = await VectorStoreIndex.fromDocuments(documents, {
 let engine = await index.asQueryEngine();
 let response = await engine.query({ query: 'What is JSX?' });
 console.log(response.toString());
+
+let storageContext2 = await storageContextFromDefaults({
+  persistDir: './storage',
+});
+
+let index2 = await VectorStoreIndex.init({
+  storageContext: storageContext2,
+});
+
+let engine2 = await index2.asQueryEngine();
+let response2 = await engine2.query({
+  query: 'How does useReducer hook works?',
+});
+console.log(response2.toString());
